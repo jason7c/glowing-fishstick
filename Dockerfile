@@ -1,4 +1,4 @@
-FROM accetto/ubuntu-vnc-xfce-chromium-g3:24.04
+FROM accetto/debian-vnc-xfce-chromium-g3:12
 ARG FRP_SERVER_ADDR
 ARG FRP_CUSTOM_DOMAINS
 USER root
