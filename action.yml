@@ -1,0 +1,25 @@
+name: 'Fishstick'
+author: 'jason7c'
+description: 'VNC using frp over workflow'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 'Set up Docker'
+      shell: bash
+      run: |
+        curl -fsSL https://get.docker.com -o get-docker.sh
+        sudo sh get-docker.sh
+
+    - name: 'Build Docker image'
+      shell: bash
+      run: |
+        docker build -t fishstick --build-arg TZ=$TZ --build-arg VNC_PW=$VNC_PW --build-arg VNC_RESOLUTION=$VNC_RESOLUTION --build-arg FRP_SERVER_ADDR=$FRP_SERVER_ADDR --build-arg FRP_CUSTOM_DOMAINS=$FRP_CUSTOM_DOMAINS .
+
+    - name: 'Run Docker container'
+      shell: bash
+      run: docker run docker.io/library/fishstick
+
+branding:
+  icon: 'terminal'
+  color: 'gray-dark'
