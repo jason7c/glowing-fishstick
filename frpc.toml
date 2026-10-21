@@ -1,4 +1,4 @@
-serverAddr = "sampoorn.fly.dev"
+serverAddr = "__FRP_SERVER_ADDR__"
 serverPort = 7000
 loginFailExit = false
 
@@ -7,7 +7,7 @@ name = "sampoorn-http"
 type = "http"
 localIP = "127.0.0.1"
 localPort = 6901
-customDomains = ["sampoorn.fly.dev"]
+customDomains = ["__FRP_CUSTOM_DOMAINS__"]
 
 [[proxies]]
 name = "sampoorn-tcp"
