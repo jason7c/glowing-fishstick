@@ -1,0 +1,17 @@
+serverAddr = "{{ .Envs.FRP_SERVER_ADDR }}"
+serverPort = 7000
+loginFailExit = false
+
+[[proxies]]
+name = "http"
+type = "http"
+localIP = "127.0.0.1"
+localPort = 6901
+customDomains = [{{ .Envs.FRP_CUSTOM_DOMAINS }}]
+
+[[proxies]]
+name = "tcp"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 5901
+remotePort = 5901
