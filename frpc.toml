@@ -1,16 +1,16 @@
-serverAddr = "{{ .Envs.FRP_SERVER_ADDR }}"
+serverAddr = "sampoorn.fly.dev"
 serverPort = 7000
 loginFailExit = false
 
 [[proxies]]
-name = "http"
+name = "sampoorn-http"
 type = "http"
 localIP = "127.0.0.1"
 localPort = 6901
-customDomains = ["{{ .Envs.FRP_CUSTOM_DOMAINS }}"]
+customDomains = ["sampoorn.fly.dev"]
 
 [[proxies]]
-name = "tcp"
+name = "sampoorn-tcp"
 type = "tcp"
 localIP = "127.0.0.1"
 localPort = 5901
