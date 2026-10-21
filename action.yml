@@ -8,11 +8,12 @@ runs:
     - name: 'Build Docker image'
       shell: bash
       run: |
-        docker build -t fishstick --build-arg TZ="$TZ" --build-arg VNC_PW="$VNC_PW" --build-arg VNC_RESOLUTION="$VNC_RESOLUTION" --build-arg FRP_SERVER_ADDR="$FRP_SERVER_ADDR" --build-arg FRP_CUSTOM_DOMAINS="$FRP_CUSTOM_DOMAINS" .
+        docker build -t fishstick --build-arg FRP_SERVER_ADDR="$FRP_SERVER_ADDR" --build-arg FRP_CUSTOM_DOMAINS="$FRP_CUSTOM_DOMAINS" .
 
     - name: 'Run Docker container'
       shell: bash
-      run: docker run docker.io/library/fishstick
+      run: |
+        docker run -e TZ="$TZ" -e VNC_PW="$VNC_PW" -e VNC_RESOLUTION="$VNC_RESOLUTION" docker.io/library/fishstick
 
 branding:
   icon: 'terminal'
