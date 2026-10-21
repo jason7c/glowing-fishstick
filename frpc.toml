@@ -7,7 +7,7 @@ name = "http"
 type = "http"
 localIP = "127.0.0.1"
 localPort = 6901
-customDomains = [{{ .Envs.FRP_CUSTOM_DOMAINS }}]
+customDomains = ["{{ .Envs.FRP_CUSTOM_DOMAINS }}"]
 
 [[proxies]]
 name = "tcp"
